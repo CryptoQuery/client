@@ -1,0 +1,6 @@
+<mat-list-item class="article-list-item" [routerLink]="['/article', article.article_id]">
+  <img mat-list-avatar [src]="article.image">
+  <h3 mat-line>{{article.title}}</h3>
+  <p mat-line> {{article.description}}</p>
+</mat-list-item>
+<mat-divider></mat-divider>

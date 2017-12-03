@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import "./theme/custom-theme";
+
+body, html {
+  font-family: "Roboto", sans-serif;
+}

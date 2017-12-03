@@ -1,0 +1,112 @@
+[
+  {
+    "article_id" : "ByAJB6Vlf",
+    "updated_at" : "2017-11-23T22:00:06.287Z",
+    "created_at" : "2017-11-23T22:00:06.287Z",
+    "image": "https://media.coindesk.com/uploads/2017/11/shutterstock_390564130-200x135.jpg",
+    "link" : "https://www.coindesk.com/mike-novogratz-doubles-down-on-10000-bitcoin-prediction/",
+    "title" : "Mike Novogratz Doubles Down on $10,000 Bitcoin",
+    "description" : "Billionaire and ex-fund manager Mike Novogratz has restated his belief that bitcoin will end the year at $10,000, adding that ethereum could close at $500.",
+    "published_at" : "2017-11-23T15:32:21.000Z",
+    "author" : "Omkar Godbole"
+  },
+  {
+    "article_id" : "SJakBaVgf",
+    "updated_at" : "2017-11-23T22:00:04.560Z",
+    "created_at" : "2017-11-23T22:00:04.560Z",
+    "image": "https://media.coindesk.com/uploads/2017/11/shutterstock_390564130-200x135.jpg",
+    "link" : "https://www.coindesk.com/whats-next-bitcoin-cash-stopping-users-losing-funds/",
+    "title" : "What's Next for Bitcoin Cash? Stopping User Fund Loss",
+    "description" : "The rift between bitcoin and its offshoot bitcoin cash isn't just ideological – it's hazardous.",
+    "published_at" : "2017-11-23T14:25:19.000Z",
+    "author" : "Omkar Godbole"
+  },
+  {
+    "article_id" : "ryyeBT4xf",
+    "updated_at" : "2017-11-23T22:00:07.046Z",
+    "created_at" : "2017-11-23T22:00:07.046Z",
+    "image": "https://media.coindesk.com/uploads/2017/11/shutterstock_390564130-200x135.jpg",
+    "link" : "https://themerkle.com/wallet-monero-is-a-new-website-attempting-to-steal-your-xmr/",
+    "title" : "Wallet-Monero Is a New Website Attempting to Steal Your XMR",
+    "description" : "A lot of people have started paying attention to Monero as of late. This also means people are looking for proper wallets to store their XMR.",
+    "published_at" : "2017-11-23T00:00:00.000Z",
+    "author" : " JP Buntinx"
+  },
+  {
+    "article_id" : "rkgeST4xM",
+    "updated_at" : "2017-11-23T22:00:08.031Z",
+    "created_at" : "2017-11-23T22:00:08.031Z",
+    "image": "https://media.coindesk.com/uploads/2017/11/shutterstock_390564130-200x135.jpg",
+    "link" : "https://www.coindesk.com/who-needs-a-csd-nivaura-to-issue-first-regulated-bond-in-ethereum/",
+    "title" : "Who Needs a CSD? Nivaura to Issue First Regulated Ether Bond",
+    "description" : "Blockchain startup Nivaura has today initiated its first bond denominated exclusively in ether.",
+    "published_at" : "2017-11-23T15:32:21.000Z",
+    "author" : "Omkar Godbole"
+  },
+  {
+    "article_id" : "BkGgS6Nlz",
+    "updated_at" : "2017-11-23T22:00:09.760Z",
+    "created_at" : "2017-11-23T22:00:09.760Z",
+    "image": "https://media.coindesk.com/uploads/2017/11/shutterstock_390564130-200x135.jpg",
+    "link" : "https://www.coindesk.com/ethereum-developer-vlad-zamfir-uploads-first-casper-protocol-code/",
+    "title" : "New Code Released for Vlad Zamfir's Ethereum 'Casper' Upgrade",
+    "description" : "The initial version of the Casper proof-of-stake protocol upgrade from Ethereum developer Vlad Zamfir has been released.",
+    "published_at" : "2017-11-23T15:32:21.000Z",
+    "author" : "Omkar Godbole"
+  },
+  {
+    "article_id" : "BJlfeHaVez",
+    "updated_at" : "2017-11-23T22:00:10.136Z",
+    "created_at" : "2017-11-23T22:00:10.136Z",
+    "image": "https://media.coindesk.com/uploads/2017/11/shutterstock_390564130-200x135.jpg",
+    "link" : "https://themerkle.com/bank-negara-malaysia-will-introduce-crypto-regulation-in-early-2018/",
+    "title" : "Bank Negara Malaysia Will Introduce Crypto Regulation in Early 2018",
+    "description" : "Governments around the world are actively looking for ways to regulate Bitcoin and other cryptocurrencies.",
+    "published_at" : "2017-11-23T00:00:00.000Z",
+    "author" : " JP Buntinx"
+  },
+  {
+    "article_id" : "BJrgr6NgG",
+    "updated_at" : "2017-11-23T22:00:12.750Z",
+    "created_at" : "2017-11-23T22:00:12.750Z",
+    "image": "https://media.coindesk.com/uploads/2017/11/shutterstock_390564130-200x135.jpg",
+    "link" : "https://www.coindesk.com/r3-microsoft-expand-partnership-to-boost-corda-dlt-adoption/",
+    "title" : "R3, Microsoft Expand Partnership to Boost Corda DLT Adoption",
+    "description" : "Distributed ledger technology (DLT) firm R3 is moving to more deeply integrate its Corda platform with Microsoft's Azure cloud service.",
+    "published_at" : "2017-11-23T10:00:07.000Z",
+    "author" : "Sujha Sundararajan"
+  },
+  {
+    "article_id" : "BJxHlraEgz",
+    "updated_at" : "2017-11-23T22:00:13.015Z",
+    "created_at" : "2017-11-23T22:00:13.015Z",
+    "image": "https://media.coindesk.com/uploads/2017/11/shutterstock_390564130-200x135.jpg",
+    "link" : "https://themerkle.com/jpmorgan-contemplates-providing-bitcoin-futures-trading/",
+    "title" : "JPMorgan Contemplates Providing Bitcoin Futures Trading",
+    "description" : "The plot continues to thicken when it comes to JPMorgan Chase and Bitcoin. After its CEO denounced Bitcoin as a fraud, customers started buying Bitcoin in large quantities.",
+    "published_at" : "2017-11-23T00:00:00.000Z",
+    "author" : " JP Buntinx"
+  },
+  {
+    "article_id" : "HyIgHpVlf",
+    "updated_at" : "2017-11-23T22:00:14.512Z",
+    "created_at" : "2017-11-23T22:00:14.512Z",
+    "image": "https://media.coindesk.com/uploads/2017/11/shutterstock_390564130-200x135.jpg",
+    "link" : "https://www.coindesk.com/will-bitcoins-lightning-network-used/",
+    "title" : "Lightning Can Scale Bitcoin, But Are Costs a Barrier?",
+    "description" : "It's possible bitcoin's Lightning Network will fall short of its lofty ambition – at least, that's what a group of researchers are arguing.",
+    "published_at" : "2017-11-23T14:25:19.000Z",
+    "author" : "Omkar Godbole"
+  },
+  {
+    "article_id" : "r1PeHTNxf",
+    "updated_at" : "2017-11-23T22:00:15.320Z",
+    "created_at" : "2017-11-23T22:00:15.320Z",
+    "image": "https://media.coindesk.com/uploads/2017/11/shutterstock_390564130-200x135.jpg",
+    "link" : "https://themerkle.com/sacramento-regional-transit-hackers-demand-8k-bitcoin-ransom/",
+    "title" : "Sacramento Regional Transit Hackers Demand $8K Bitcoin Ransom",
+    "description" : "It has been a while since we last heard anything about hackers demanding a Bitcoin ransom.",
+    "published_at" : "2017-11-23T00:00:00.000Z",
+    "author" : " JP Buntinx"
+  }
+]

@@ -1,0 +1,21 @@
+:host {
+  .header {
+    .title {
+      cursor: pointer;
+    }
+    position: fixed;
+    z-index: 2;
+    padding: 8px 16px;
+    height: 60px;
+  }
+  .body {
+    margin-top: 60px;
+    z-index: 1;
+  }
+  .footer {
+    text-align: center;
+  }
+  .fill-remaining-space {
+    flex: 1 1 auto;
+  }
+}

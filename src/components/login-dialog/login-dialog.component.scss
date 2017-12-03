@@ -1,0 +1,15 @@
+.login-dialog {
+  .title-separator {
+    margin-bottom: 0;
+  }
+  .dialog-content {
+    margin-top: 10px;
+  }
+  .login-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-container > * {
+    width: 100%;
+  }
+}

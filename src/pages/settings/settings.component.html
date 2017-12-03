@@ -1,0 +1,11 @@
+<div class="settings">
+  <mat-card>
+    <mat-card-title>{{title}}</mat-card-title>
+    <mat-card-content>
+      <mat-slider class="slider" min="0" max="10" [(ngModel)]="quality"></mat-slider>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button (click)="saveSettings()">Save</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
