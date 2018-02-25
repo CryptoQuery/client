@@ -2,7 +2,39 @@
   <mat-card>
     <mat-card-title>{{title}}</mat-card-title>
     <mat-card-content>
-      <mat-slider class="slider" min="0" max="10" [(ngModel)]="quality"></mat-slider>
+      <form>
+        <mat-list>
+          <mat-list-item>
+            <h3 matLine>Quality: {{quality}}</h3>
+            <mat-slider matLine min="0" max="10" [(ngModel)]="quality" [ngModelOptions]="{standalone: true}"></mat-slider>
+          </mat-list-item>
+          <mat-list-item>
+            <h3 matLine>Complexity: {{complexity}}</h3>
+            <mat-slider matLine min="0" max="10" [(ngModel)]="complexity" [ngModelOptions]="{standalone: true}"></mat-slider>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-form-field class="topics" matLine>
+              <mat-select
+                placeholder="Topics"
+                (selectionChange)="addTopic($event)">
+                <mat-option *ngFor="let topic of defaultTopics" [value]="topic">
+                  {{ topic }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-chip-list #chipList matLine>
+              <mat-chip
+                *ngFor="let topic of topics"
+                [selectable]="true"
+                [removable]="true"
+                (remove)="removeTopic(topic)">
+                {{topic}}
+                <mat-icon matChipRemove>cancel</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+          </mat-list-item>
+        </mat-list>
+      </form>
     </mat-card-content>
     <mat-card-actions align="end">
       <button mat-button (click)="saveSettings()">Save</button>

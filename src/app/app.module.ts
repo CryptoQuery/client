@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  ErrorStateMatcher, MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, MatIconModule, MatInputModule, MatListModule,
-  MatMenuModule, MatProgressBarModule, MatSliderModule, MatToolbarModule, ShowOnDirtyErrorStateMatcher
+  ErrorStateMatcher, MatButtonModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDialogModule, MatIconModule, MatInputModule,
+  MatListModule, MatMenuModule, MatProgressBarModule, MatSelectModule, MatSliderModule, MatToolbarModule, ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -54,7 +54,9 @@ import { ArticleComponent } from '../pages/article/article.component';
       MatProgressBarModule,
       MatMenuModule,
       MatCardModule,
-      MatSliderModule
+      MatSliderModule,
+      MatChipsModule,
+      MatSelectModule
     ],
     ReactiveFormsModule,
     FormsModule,
