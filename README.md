@@ -23,7 +23,7 @@ Note: For all server-to-client objects, make sure to pass the following with eve
 ```json
 {
   "success": true,
-  "response": response_object
+  "response": {}
 }
 ```  
   
