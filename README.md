@@ -36,18 +36,31 @@ Client to Server:
 ```json
 [
   {
-    "article_id" : "",
-    "updated_at" : "2017-11-23T22:00:06.287Z",
-    "created_at" : "2017-11-23T22:00:06.287Z",
     "image": "",
     "link" : "",
     "title" : "",
     "description" : "",
     "published_at" : "2017-11-23T15:32:21.000Z",
-    "author" : ""
+    "author" : "",
+    "complexity": 10,
+    "quality": 10,
+    "topics": [
+      "topic_1",
+      "topic_2"
+    ]
   }
 ]
-```
+```  
+  
+Server to Client:  
+```json
+{
+  "article_ids": [
+    ""
+  ]
+}
+```  
+  
 ### getArticles  
 Get list of articles based on complexity and preferred topics.  
   
@@ -59,7 +72,8 @@ Client to Server:
     "topic_1",
     "topic_2"
   ],
-  "offset": 20
+  "offset": 20,
+  "limit": 20
 }
 ```  
   
@@ -68,8 +82,6 @@ Server to Client:
 [
   {
     "article_id" : "",
-    "updated_at" : "2017-11-23T22:00:06.287Z",
-    "created_at" : "2017-11-23T22:00:06.287Z",
     "image": "",
     "link" : "",
     "title" : "",
