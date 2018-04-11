@@ -10,10 +10,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 /* Directives */
 import {HttpService} from '../services/http/http.service';
+import {StorageService} from '../services/storage/storage.service';
 
 /* Components */
 import { ArticleListItemComponent } from '../components/article-list-item/article-list-item.component';
 import { LoginDialogComponent } from '../components/login-dialog/login-dialog.component';
+
+/* Pipes */
+import { DateFormatPipe } from '../pipes/date-format/date-format.pipe';
 
 /* Pages */
 import { AppComponent } from './app.component';
@@ -30,13 +34,15 @@ import { ArticleComponent } from '../pages/article/article.component';
     SettingsComponent,
     ArticleComponent,
     ArticleListItemComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    DateFormatPipe
   ],
   entryComponents: [
     LoginDialogComponent
   ],
   providers: [
     HttpService,
+    StorageService,
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
   ],
   bootstrap: [AppComponent],

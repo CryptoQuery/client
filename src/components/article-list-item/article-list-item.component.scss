@@ -1,3 +1,29 @@
 .article-list-item {
   cursor: pointer;
+  border-bottom: solid 1px #e8e8e8;
+  .picture {
+    width: 190px;
+    margin: 15px 30px 0 0;
+    display: table-cell;
+    vertical-align: middle;
+    a {
+      position: relative;
+      display: block;
+      border-radius: 2px;
+      text-align: center;
+    }
+  }
+  .post-info {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 15px;
+    a {
+      &:hover {
+        color: #58585A;
+      }
+      text-decoration: none;
+      color: #353536;
+      outline: 0;
+    }
+  }
 }

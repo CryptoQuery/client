@@ -1,6 +1,18 @@
-<mat-list-item class="article-list-item" [routerLink]="['/article', article.article_id]">
-  <img mat-list-avatar [src]="article.image">
-  <h3 mat-line>{{article.title}}</h3>
-  <p mat-line> {{article.description}}</p>
-</mat-list-item>
-<mat-divider></mat-divider>
+<div class="article-list-item row">
+  <div class="picture col-xs-12 col-sm-4">
+    <a [routerLink]="['/article', article.article_id]" [title]="article.title">
+      <img width="200" height="135" [src]="article.image"/>
+    </a>
+  </div>
+  <div class="post-info col-xs-12 col-sm-8">
+    <h3>
+      <a [routerLink]="['/article', article.article_id]">{{article.title}}</a>
+    </h3>
+    <p class="timeauthor"><time>{{article.published_at | dateFormat}}</time> |
+      <cite>
+        <a>{{article.author}}</a>
+      </cite>
+    </p>
+    <p>{{article.description}}</p>
+  </div>
+</div>

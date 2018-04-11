@@ -8,7 +8,7 @@ import {LoginDialogComponent} from '../components/login-dialog/login-dialog.comp
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Crypto Query';
+  title = 'CryptoQuery';
   constructor(public dialog: MatDialog) {}
 
   openLogin() {

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import Article from '../../json/article.json';
+import * as Articles from '../../json/articles.json';
+import {ActivatedRoute} from '@angular/router';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-article',
@@ -8,8 +10,13 @@ import Article from '../../json/article.json';
 })
 export class ArticleComponent implements OnInit {
   title = 'Article';
-  article = Article;
-  constructor() {}
+  articles = Articles;
+  article: any;
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe(params => {
+      this.article = _.filter(this.articles, ['article_id', params['id']])[0];
+    });
+  }
 
   ngOnInit() {}
 

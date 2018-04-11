@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatChipInputEvent} from '@angular/material';
-import Topics from '../../json/topics.json';
+import * as Topics from '../../json/topics.json';
+import * as _ from 'lodash';
+import {StorageService} from '../../services/storage/storage.service';
 
 @Component({
   selector: 'app-settings',
@@ -9,37 +11,47 @@ import Topics from '../../json/topics.json';
 })
 export class SettingsComponent implements OnInit {
   title = 'Settings';
-  quality: number;
-  complexity: number;
   defaultTopics = Topics;
-  currentTopic: string;
-  topics = [];
+  topics: any;
 
-  constructor() {}
+  constructor(private storage: StorageService) {}
 
   ngOnInit() {
-    this.quality = 3;
-    this.complexity = 5;
+    // Get all user topics in local storage
+    this.storage.get('topics').then((value: any) => {
+      if (Array.isArray(value)) {
+        this.topics = value;
+      }
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
   addTopic(event: MatChipInputEvent) {
     let value = event.value;
-    let index = this.topics.indexOf(value.trim());
-    // Add our fruit
+    // Get index of topics
+    let index = _.indexOf(this.topics, value.trim());
+    // Add topic to topics
     if (index < 0) {
       this.topics.push(value.trim());
     }
   }
 
   removeTopic(topic: string) {
-    let index = this.topics.indexOf(topic);
+    // Get topic index
+    let index = _.indexOf(this.topics, topic);
+    // Remove topic
     if (index >= 0) {
       this.topics.splice(index, 1);
     }
   }
 
   saveSettings() {
-    console.log('Settings Saved');
+    this.storage.set('topics', this.topics).then((result) => {
+      console.log('Settings Saved');
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
 }

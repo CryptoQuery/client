@@ -1,42 +1,13 @@
 <div class="article">
   <div class="jumbotron" [ngStyle]="{'background-image': 'url(' + article.image + ')'}">
-    <h2 class="display-3">{{article.title}}</h2>
-    <p>
-      published {{article.published_at}} by {{article.author}}
-    </p>
+    <div class="article-background">
+      <h2 class="display-3 article-title">{{article.title}}</h2>
+      <p class="article-published">
+        published {{article.published_at | dateFormat}} by {{article.author}}
+      </p>
+    </div>
   </div>
   <div class="article-content">
-    <!--<p>{{article.article}}</p>-->
-    <div class="article-content-container noskimwords">
-      <p>Billionaire and ex-fund manager Mike Novogratz&nbsp;has restated his belief that bitcoin will end the year&nbsp;
-        at $10,000,&nbsp;adding that ethereum could close at $500.
-      </p>
-      <p>Speaking with <a href="https://www.bloomberg.com/news/videos/2017-11-21/bitcoin-ends-year-at-10-000-says-mike-novogratz-video">
-        Bloomberg Daybreak: Americas</a>&nbsp;yesterday,&nbsp;Novogratz said that "I think we'll hit a new high soon ...
-        we'll end the year at $10,000 in bitcoin."</p>
-      <p>
-        Ethereum, the second largest cryptocurrency by market value, will also reach a new high soon of "close to $500."
-      </p>
-      <p>He said:
-      <p></p>
-      <blockquote>
-        <p class="quote">"There are a lot of positive things happening in the ethereum ecosystem."</p>
-      </blockquote>
-      <p>
-        Novogratz further played down the <a href="https://www.coindesk.com/tether-claims-30-million-stable-token-stolen-attacker/">recent</a>
-        Tether hack, in which over $30 million-worth of tokens were stolen, noting that&nbsp;"these are all very young experiments."
-      </p>
-      <p>Notably, the billionaire told Bloomberg that he has invested in initial coin offerings or ICOs, including one launched by the
-        WAX digital asset exchange.</p>
-      <p>With plans to start a $500 million fund for cryptocurrencies, token sales and related startups, called the Galaxy
-        Digital Asset fund,&nbsp;Novogratz indicated that he goes to great lengths to ensure the safety of his cryptocurrency holdings.
-      </p>
-      <p>
-        Novogratz first&nbsp;
-        <a href="https://www.coindesk.com/billionaire-mike-novogratz-bitcoins-price-will-reach-10k-in-less-than-a-year/">predicted</a>
-        the $10,000 bitcoin price last month, stating that&nbsp;he believes the value will be reachedin six to 10 months.
-      </p>
-      <p><em>Michael Novogratz image via CoinDesk archives</em></p>
-    </div>
+    <div [innerHTML]="article.article"></div>
   </div>
 </div>
