@@ -1,9 +1,27 @@
 <div class="home">
-  <!-- List of articles -->
-  <mat-list class="article-list">
-    <app-article-list-item
-      *ngFor="let article of articles"
-      [article]="article">
-    </app-article-list-item>
-  </mat-list>
+  <div class="center-align-content" *ngIf="isLoading">
+    <mat-spinner class="align-item spinner-spacing" color="accent" mode="indeterminate"></mat-spinner>
+  </div>
+  <div *ngIf="!isLoading">
+    <!-- List of articles -->
+    <mat-list class="article-list">
+      <app-article-list-item
+        *ngFor="let article of articles"
+        [article]="article">
+      </app-article-list-item>
+    </mat-list>
+    <br>
+
+    <!-- Next/Previous Page Buttons -->
+    <mat-chip-list>
+      <mat-chip  color="primary" (click)="previousPage()">
+        <mat-icon>navigate_before</mat-icon>
+        Prev
+      </mat-chip>
+      <mat-chip  color="primary" (click)="nextPage()">
+        Next
+        <mat-icon>navigate_next</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </div>
 </div>

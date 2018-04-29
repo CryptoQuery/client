@@ -1,13 +1,18 @@
 <div class="article">
-  <div class="jumbotron" [ngStyle]="{'background-image': 'url(' + article.image + ')'}">
-    <div class="article-background">
-      <h2 class="display-3 article-title">{{article.title}}</h2>
-      <p class="article-published">
-        published {{article.published_at | dateFormat}} by {{article.author}}
-      </p>
-    </div>
+  <div class="center-align-content" *ngIf="isLoading">
+    <mat-spinner class="align-item spinner-spacing" color="accent" mode="indeterminate"></mat-spinner>
   </div>
-  <div class="article-content">
-    <div [innerHTML]="article.article"></div>
+  <div *ngIf="!isLoading">
+    <div class="jumbotron" [ngStyle]="{'background-image': 'url(' + article.imageUrl + ')'}">
+      <div class="article-background">
+        <h2 class="display-3 article-title">{{article.title}}</h2>
+        <p class="article-published">
+          published {{article.publishedAt | dateFormat}} by {{article.author}}
+        </p>
+      </div>
+    </div>
+    <div class="article-content">
+      <div [innerHTML]="article.content"></div>
+    </div>
   </div>
 </div>

@@ -1,6 +1,9 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ServerEndpointsService} from '../../services/server-endpoints/server-endpoints.service';
+import {StorageService} from '../../services/storage/storage.service';
+import {NotificationService} from '../../services/notification/notification.service';
 
 @Component({
   selector: 'app-login-dialog',
@@ -13,7 +16,10 @@ export class LoginDialogComponent implements OnInit {
   hide = true;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
               private formBuilder: FormBuilder,
-              public matDialog: MatDialogRef<LoginDialogComponent>) {}
+              public matDialog: MatDialogRef<LoginDialogComponent>,
+              private serverEndpoints: ServerEndpointsService,
+              private storage: StorageService,
+              private notificationService: NotificationService) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -23,10 +29,34 @@ export class LoginDialogComponent implements OnInit {
   }
 
   userLogin() {
-    if (this.loginForm.valid) {
-      console.log('User Login', this.loginForm.value.email + ' : ' + this.loginForm.value.password);
-      this.matDialog.close();
-    }
+    this.isLoading = true;
+    this.serverEndpoints.authenticate({
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password
+    }).then((result: any) => {
+      // Update local storage
+      return this.serverEndpoints.updateAuthorization(result.token).then(() => {
+        return this.storage.set('User', {
+          id: result.id,
+          email: result.email
+        }).then(() => {
+          return this.storage.set('Topics', result.topics);
+        });
+      });
+    }).then((result: any) => {
+      this.isLoading = false;
+      this.notificationService.sendNotification({
+        type: 'success',
+        message: 'Successfully logged in!'
+      });
+      this.matDialog.close(true);
+    }).catch((error: any) => {
+      this.isLoading = false;
+      this.notificationService.sendNotification({
+        type: 'error',
+        message: 'Error logging in!'
+      });
+    });
   }
 
 }

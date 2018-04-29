@@ -3,18 +3,35 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  ErrorStateMatcher, MatButtonModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDialogModule, MatIconModule, MatInputModule,
-  MatListModule, MatMenuModule, MatProgressBarModule, MatSelectModule, MatSliderModule, MatToolbarModule, ShowOnDirtyErrorStateMatcher
+  ErrorStateMatcher,
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDialogModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatPaginatorModule,
+  MatProgressBarModule, MatProgressSpinnerModule,
+  MatSelectModule,
+  MatSliderModule,
+  MatToolbarModule,
+  ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-/* Directives */
+/* Services */
 import {HttpService} from '../services/http/http.service';
 import {StorageService} from '../services/storage/storage.service';
+import {ServerEndpointsService} from '../services/server-endpoints/server-endpoints.service';
+import {NotificationService} from '../services/notification/notification.service';
 
 /* Components */
 import { ArticleListItemComponent } from '../components/article-list-item/article-list-item.component';
 import { LoginDialogComponent } from '../components/login-dialog/login-dialog.component';
+import {SignupDialogComponent} from '../components/signup-dialog/signup-dialog.component';
 
 /* Pipes */
 import { DateFormatPipe } from '../pipes/date-format/date-format.pipe';
@@ -35,14 +52,18 @@ import { ArticleComponent } from '../pages/article/article.component';
     ArticleComponent,
     ArticleListItemComponent,
     LoginDialogComponent,
+    SignupDialogComponent,
     DateFormatPipe
   ],
   entryComponents: [
-    LoginDialogComponent
+    LoginDialogComponent,
+    SignupDialogComponent
   ],
   providers: [
     HttpService,
     StorageService,
+    ServerEndpointsService,
+    NotificationService,
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
   ],
   bootstrap: [AppComponent],
@@ -58,22 +79,26 @@ import { ArticleComponent } from '../pages/article/article.component';
       MatDialogModule,
       MatInputModule,
       MatProgressBarModule,
+      MatProgressSpinnerModule,
       MatMenuModule,
       MatCardModule,
       MatSliderModule,
       MatChipsModule,
-      MatSelectModule
+      MatSelectModule,
+      MatPaginatorModule
     ],
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot([
       {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        runGuardsAndResolvers: 'always'
       },
       {
         path: 'settings',
-        component: SettingsComponent
+        component: SettingsComponent,
+        runGuardsAndResolvers: 'always'
       },
       {
         path: 'article/:id',
@@ -92,7 +117,7 @@ import { ArticleComponent } from '../pages/article/article.component';
         path: '**',
         redirectTo: '/error'
       }
-    ])
+    ], {onSameUrlNavigation: 'reload'})
   ]
 })
 export class AppModule { }

@@ -3,7 +3,24 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import "./theme/custom-theme";
-
 body, html {
   font-family: "Roboto", sans-serif;
+  background: mat-color($mat-grey, 100, 0.9);
+  cursor: default;
+
+  .center-align-content {
+    display: flex;
+    justify-content: center;
+    .align-item {
+      max-width: 50%;
+    }
+  }
+
+  mat-spinner {
+    width: 100px;
+    height: 100px;
+  }
+  .spinner-spacing {
+    margin: 50px 0;
+  }
 }

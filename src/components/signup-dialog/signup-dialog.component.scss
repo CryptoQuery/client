@@ -1,0 +1,15 @@
+.signup-dialog {
+  .title-separator {
+    margin-bottom: 0;
+  }
+  .dialog-content {
+    margin-top: 10px;
+  }
+  .signup-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .signup-container > * {
+    width: 100%;
+  }
+}

@@ -1,6 +1,6 @@
-<div class="login-dialog">
+<div class="signup-dialog">
   <h2 mat-dialog-title>
-    User Login
+    User Sign Up
     <button mat-icon-button mat-dialog-close class="pull-right">
       <mat-icon>close</mat-icon>
     </button>
@@ -8,24 +8,31 @@
   <mat-divider class="title-separator"></mat-divider>
   <mat-progress-bar *ngIf="isLoading" color="accent" mode="indeterminate"></mat-progress-bar>
   <mat-dialog-content class="dialog-content">
-    <form [formGroup]="loginForm" novalidate class="login-container">
+    <form [formGroup]="signupForm" novalidate class="signup-container">
       <mat-form-field>
         <input matInput type="email" placeholder="Email"  formControlName="email" cdkFocusRegionstart>
-        <mat-error *ngIf="!loginForm.controls.email.valid">
+        <mat-error *ngIf="!signupForm.controls['email'].valid">
           Email is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Password" [type]="hide ? 'password': 'text'"  formControlName="password">
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-        <mat-error *ngIf="!loginForm.controls.password.valid">
+        <mat-error *ngIf="!signupForm.controls['password'].valid">
           Password is <strong>required</strong> (minimum 5 characters).
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Verify Password" [type]="hideVerify ? 'password': 'text'"  formControlName="verifyPassword">
+        <mat-icon matSuffix (click)="hideVerify = !hideVerify">{{hideVerify ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="!signupForm.controls['verifyPassword'].valid">
+          Passwords must match (minimum 5 characters).
         </mat-error>
       </mat-form-field>
     </form>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [disabled]="!loginForm.valid" (click)="userLogin()">Login</button>
+    <button mat-button [disabled]="!signupForm.valid" (click)="userSignup()">Sign Up</button>
   </mat-dialog-actions>
 </div>
