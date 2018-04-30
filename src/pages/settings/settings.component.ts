@@ -5,6 +5,7 @@ import * as _ from 'lodash';
 import {StorageService} from '../../services/storage/storage.service';
 import {NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {NotificationService} from '../../services/notification/notification.service';
+import {ServerEndpointsService} from '../../services/server-endpoints/server-endpoints.service';
 
 @Component({
   selector: 'app-settings',
@@ -18,7 +19,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
   navigation: any;
   constructor(private storage: StorageService,
               private router: Router,
-              private notificationService: NotificationService) {
+              private notificationService: NotificationService,
+              private serverEndpoints: ServerEndpointsService) {
     this.navigation = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         // Get all user topics in local storage
@@ -64,8 +66,25 @@ export class SettingsComponent implements OnInit, OnDestroy {
   }
 
   saveSettings() {
-    this.storage.set('Topics', this.topics).then(() => {
-      console.log('Settings Saved');
+    this.storage.get('User').then((result: any) => {
+      if (result && 'id' in result) {
+        return this.serverEndpoints.updateUserTopics(result.id, {
+          topics: this.topics
+        });
+      } else {
+        return Promise.resolve({ topics: this.topics });
+      }
+    }).then((result: any) => {
+      if ('topics' in result) {
+        return this.storage.set('Topics', result.topics);
+      } else {
+        throw new Error('Unable to save user settings');
+      }
+    }).then(() => {
+      this.notificationService.sendNotification({
+        type: 'success',
+        message: 'Successfully saved settings!'
+      });
     }).catch(() => {
       this.notificationService.sendNotification({
         type: 'error',

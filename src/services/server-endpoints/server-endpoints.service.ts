@@ -53,8 +53,8 @@ export class ServerEndpointsService {
   }
 
   //CHECK: updateUserSettings <id>, <topics>
-  updateUserSettings(id: string, query: any) {
-    return this.http.patch(`/api/Users/UpdateUserSettings/${id}`, {
+  updateUserTopics(id: string, query: any) {
+    return this.http.patch(`/api/Users/UpdateUserTopics/${id}`, {
       topics: query.topics
     });
   }
