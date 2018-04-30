@@ -1,11 +1,12 @@
 import {Component, OnDestroy} from '@angular/core';
-import {MatDialog} from '@angular/material';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {LoginDialogComponent} from '../components/login-dialog/login-dialog.component';
 import {SignupDialogComponent} from '../components/signup-dialog/signup-dialog.component';
 import {ServerEndpointsService} from '../services/server-endpoints/server-endpoints.service';
 import {Router} from '@angular/router';
 import {StorageService} from '../services/storage/storage.service';
 import {NotificationService} from '../services/notification/notification.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ export class AppComponent implements OnDestroy {
               private serverEndpoints: ServerEndpointsService,
               private router: Router,
               private storage: StorageService,
-              private notificationService: NotificationService) {
+              private notificationService: NotificationService,
+              private snackBar: MatSnackBar) {
     // Subscribe to notification service
     this.notification = notificationService.getNotification().subscribe((body: any) => this.displayNotification(body));
     // Check if user is logged in
@@ -73,6 +75,10 @@ export class AppComponent implements OnDestroy {
   signOut() {
     this.serverEndpoints.clearAuthorization().then(() => {
       this.userLoggedIn = false;
+      this.displayNotification({
+        type: 'Success',
+        message: 'Successfully logged out'
+      });
       const url = this.router.url.split('?')[0];
       if (url === '/home') {
         this.router.navigate([url], { queryParams: { page: 0 } });
@@ -89,9 +95,13 @@ export class AppComponent implements OnDestroy {
 
   displayNotification(body: any) {
     if (body.type === 'error') {
-      console.log('error', body.message);
+      this.snackBar.open(body.message, _.startCase(body.type), {
+        duration: 2000
+      });
     } else {
-      console.log('message', body.message);
+      this.snackBar.open(body.message, _.startCase(body.type), {
+        duration: 2000
+      });
     }
   }
 }

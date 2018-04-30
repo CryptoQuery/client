@@ -16,7 +16,7 @@ import {
   MatPaginatorModule,
   MatProgressBarModule, MatProgressSpinnerModule,
   MatSelectModule,
-  MatSliderModule,
+  MatSliderModule, MatSnackBarModule,
   MatToolbarModule,
   ShowOnDirtyErrorStateMatcher
 } from '@angular/material';
@@ -85,7 +85,8 @@ import { ArticleComponent } from '../pages/article/article.component';
       MatSliderModule,
       MatChipsModule,
       MatSelectModule,
-      MatPaginatorModule
+      MatPaginatorModule,
+      MatSnackBarModule
     ],
     ReactiveFormsModule,
     FormsModule,
