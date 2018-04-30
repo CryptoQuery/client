@@ -54,7 +54,7 @@
       color: gray;
       line-height: 1.6;
     }
-    /deep/img {
+    img::ng-deep {
       width: 100% !important;
       height: auto;
     }

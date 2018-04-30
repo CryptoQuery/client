@@ -1,0 +1,11 @@
+@import '../../theme/custom-theme';
+
+.message-type-error {
+  color: mat-color($custom-app-accent);
+}
+.message-type-success {
+  color: mat-color($custom-app-primary);
+}
+.message {
+  color: white;
+}

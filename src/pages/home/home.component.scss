@@ -1,5 +1,5 @@
 .home {
-  /deep/ mat-chip-list {
+  mat-chip-list::ng-deep {
     .mat-chip-list-wrapper {
       align-items: center !important;
       justify-content: center !important;

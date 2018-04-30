@@ -69,7 +69,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
     }).catch(() => {
       this.notificationService.sendNotification({
         type: 'error',
-        message: 'Error: Unable to save settings'
+        message: 'Unable to save settings'
       });
     });
   }

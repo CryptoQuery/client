@@ -1,12 +1,13 @@
 import {Component, OnDestroy} from '@angular/core';
 import {MatDialog, MatSnackBar} from '@angular/material';
+import * as _ from 'lodash';
 import {LoginDialogComponent} from '../components/login-dialog/login-dialog.component';
 import {SignupDialogComponent} from '../components/signup-dialog/signup-dialog.component';
 import {ServerEndpointsService} from '../services/server-endpoints/server-endpoints.service';
 import {Router} from '@angular/router';
 import {StorageService} from '../services/storage/storage.service';
 import {NotificationService} from '../services/notification/notification.service';
-import * as _ from 'lodash';
+import {NotificationSnackbarComponent} from '../components/notification-snackbar/notification-snackbar.component';
 
 @Component({
   selector: 'app-root',
@@ -94,14 +95,12 @@ export class AppComponent implements OnDestroy {
   }
 
   displayNotification(body: any) {
-    if (body.type === 'error') {
-      this.snackBar.open(body.message, _.startCase(body.type), {
-        duration: 2000
-      });
-    } else {
-      this.snackBar.open(body.message, _.startCase(body.type), {
-        duration: 2000
-      });
-    }
+    this.snackBar.openFromComponent(NotificationSnackbarComponent, {
+      data: {
+        type: _.startCase(body.type),
+        message: body.message
+      },
+      duration: 2500
+    });
   }
 }

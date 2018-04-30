@@ -42,6 +42,7 @@ import { HomeComponent } from '../pages/home/home.component';
 import { ErrorComponent } from '../pages/error/error.component';
 import { SettingsComponent } from '../pages/settings/settings.component';
 import { ArticleComponent } from '../pages/article/article.component';
+import { NotificationSnackbarComponent } from '../components/notification-snackbar/notification-snackbar.component';
 
 @NgModule({
   declarations: [
@@ -53,11 +54,13 @@ import { ArticleComponent } from '../pages/article/article.component';
     ArticleListItemComponent,
     LoginDialogComponent,
     SignupDialogComponent,
-    DateFormatPipe
+    DateFormatPipe,
+    NotificationSnackbarComponent
   ],
   entryComponents: [
     LoginDialogComponent,
-    SignupDialogComponent
+    SignupDialogComponent,
+    NotificationSnackbarComponent
   ],
   providers: [
     HttpService,

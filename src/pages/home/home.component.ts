@@ -79,14 +79,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       if (_.isEmpty(this.articles)) {
         this.notificationService.sendNotification({
           type: 'error',
-          message: 'Error: No articles found!'
+          message: 'No articles found!'
         });
       }
     }).catch((error: any) => {
       this.isLoading = false;
       this.notificationService.sendNotification({
         type: 'error',
-        message: 'Error: Unable to retrieve articles!'
+        message: 'Unable to retrieve articles!'
       });
       this.router.navigate(['/error']);
     });
