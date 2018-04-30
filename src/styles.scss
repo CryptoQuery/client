@@ -16,11 +16,20 @@ body, html {
     }
   }
 
+  /* Loading Icons */
   mat-spinner {
     width: 100px;
     height: 100px;
   }
   .spinner-spacing {
     margin: 50px 0;
+  }
+  .mat-progress-bar {
+    .mat-progress-bar-background {
+      fill: transparent!important;
+    }
+    .mat-progress-bar-buffer {
+      background-color: transparent !important;
+    }
   }
 }
