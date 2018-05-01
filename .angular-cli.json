@@ -55,10 +55,12 @@
   },
   "defaults": {
     "styleExt": "scss",
+    "poll": 2000,
     "component": {},
     "serve": {
       "host": "0.0.0.0",
-      "port": 4200
+      "port": 4200,
+      "proxyConfig": "proxy.conf.json"
     }
   }
 }
