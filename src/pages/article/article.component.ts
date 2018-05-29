@@ -11,7 +11,6 @@ import * as _ from 'lodash';
 })
 export class ArticleComponent implements OnInit {
   title = 'Article';
-  articles = Articles;
   article: any;
   isLoading = false;
   articleId: string;
